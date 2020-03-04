@@ -3,6 +3,8 @@ import useReactRouter from "use-react-router";
 
 export default () => {
   const { match } = useReactRouter();
-  console.log("🌟🚨: match", match);
-  return <div>HELLOOOO</div>;
+  const deckData = match.params.deckData;
+  const decodedDeckData = decodeURI(deckData);
+
+  return <div>{decodedDeckData}</div>;
 };

@@ -52,7 +52,7 @@ export default () => {
     history.push(`/?${encodeURI(value)}`);
   };
   const handleBuild = () => {
-    history.push(`/deck/?${encodeURI(value)}`);
+    history.push(`/deck/${encodeURI(value)}`);
   };
 
   return (
