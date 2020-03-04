@@ -3,13 +3,20 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import Deck from "./components/Deck";
 
 const AppWithRouter = () => (
   <BrowserRouter>
-    <Route path="/">
-      <App />
-    </Route>
+    <Switch>
+      <Route exact={true} path="/">
+        <App />
+      </Route>
+      <Route path="/deck/:deckData?">
+        <Deck />
+      </Route>
+      <Route render={() => <Redirect to="/" />} />
+    </Switch>
   </BrowserRouter>
 );
 

@@ -6,22 +6,36 @@ import { Switch, Button } from "@material-ui/core";
 import useReactRouter from "use-react-router";
 // import qs from "query-string";
 
-const CONTROLS_HEIGHT = 42;
+const CONTROLS_HEIGHT = 20;
 const AppStyles = styled.div`
   * {
     box-sizing: border-box;
   }
   .controls {
-    position: relative;
+    /* position: relative;
     height: ${CONTROLS_HEIGHT}px;
     display: flex;
     padding: 0.5em;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around; */
   }
   .buildBtn {
+    position: fixed;
+    bottom: ${CONTROLS_HEIGHT}px;
+    right: ${CONTROLS_HEIGHT}px;
+    z-index: 999;
   }
   .themeSwitch {
+    z-index: 999;
+    position: fixed;
+    top: ${CONTROLS_HEIGHT}px;
+    right: ${CONTROLS_HEIGHT}px;
+    .dark {
+      color: black;
+    }
+    .light {
+      color: white;
+    }
   }
 `;
 
@@ -37,13 +51,17 @@ export default () => {
     setValue(value);
     history.push(`/?${encodeURI(value)}`);
   };
-  const handleBuild = () => {};
+  const handleBuild = () => {
+    history.push(`/deck/?${encodeURI(value)}`);
+  };
 
   return (
     <AppStyles>
       <div className="controls">
         <div className="themeSwitch">
-          Dark <Switch onChange={() => setIsLightTheme(!isLightTheme)} /> Light
+          <span className="dark">Dark</span>{" "}
+          <Switch onChange={() => setIsLightTheme(!isLightTheme)} />{" "}
+          <span className="light">Light</span>
         </div>
         <div className="buildBtn">
           <Button variant="contained" color="primary" onClick={handleBuild}>
@@ -54,7 +72,7 @@ export default () => {
       <ControlledEditor
         value={value}
         onChange={handleEditorChange}
-        height={`calc(100vh - ${CONTROLS_HEIGHT}px)`}
+        height={`100vh`}
         language="markdown"
         theme={isLightTheme ? "light" : "dark"}
         options={{ wordWrap: "on" }}
