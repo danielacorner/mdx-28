@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: talves/netlify-cms-cra-simple
+
+media_folder: "public/images"
+public_folder: "images"
+
+collections:
+  - name: deck
+    label: Deck (markdown)
+    files:
+      - file: public/deck.mdx
+        name: deck
+        label: Deck (markdown)
+        fields:
+          - name: slides
+            label: "Deck"
+            widget: markdown
+            required: true
