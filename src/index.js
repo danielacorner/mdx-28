@@ -12,6 +12,9 @@ const AppWithRouter = () => (
       <Route exact={true} path="/">
         <App />
       </Route>
+      <Route exact={true} path="/edit">
+        <App />
+      </Route>
       <Route path="/deck/:deckData?">
         <Deck />
       </Route>

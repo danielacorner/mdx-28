@@ -24,7 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start-deck": "mdx-deck deck.mdx",
-    "build-deck": "mdx-deck build deck.mdx"
+    "build-deck": "mdx-deck build deck.mdx",
+    "build-netlify-deck": "mdx-deck build ./public/deck.mdx"
   },
   "eslintConfig": {
     "extends": "react-app"
