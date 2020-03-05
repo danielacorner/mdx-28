@@ -8,6 +8,8 @@ public_folder: "images"
 collections:
   - name: deck
     label: Deck (markdown)
+    extension: mdx
+    format: frontmatter
     files:
       - file: public/deck.mdx
         name: deck
