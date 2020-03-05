@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "start-deck": "mdx-deck deck.mdx",
     "build-deck": "mdx-deck build deck.mdx",
-    "ci": "mdx-deck build ./public/deck.mdx"
+    "ci": "mdx-deck build deck.mdx"
   },
   "eslintConfig": {
     "extends": "react-app"

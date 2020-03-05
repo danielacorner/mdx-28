@@ -11,7 +11,7 @@ collections:
     extension: mdx
     format: frontmatter
     files:
-      - file: public/deck.mdx
+      - file: deck.mdx
         name: deck
         label: Deck (markdown)
         fields:
