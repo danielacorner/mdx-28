@@ -28,13 +28,13 @@ const AppStyles = styled.div`
   .themeSwitch {
     z-index: 999;
     position: fixed;
-    top: ${CONTROLS_HEIGHT}px;
-    right: ${CONTROLS_HEIGHT}px;
+    bottom: ${CONTROLS_HEIGHT}px;
+    left: ${CONTROLS_HEIGHT}px;
     .dark {
-      color: black;
+      color: white;
     }
     .light {
-      color: white;
+      color: black;
     }
   }
 `;
