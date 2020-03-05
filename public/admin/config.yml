@@ -15,7 +15,7 @@ collections:
         name: deck
         label: Deck (markdown)
         fields:
-          - name: slides
+          - name: body
             label: "Deck"
             widget: markdown
             required: true
